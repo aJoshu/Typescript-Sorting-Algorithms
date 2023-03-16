@@ -1,0 +1,8 @@
+.graph {
+  display: flex;
+  align-items: flex-end;
+}
+
+.bar {
+  width: 100%;
+}
