@@ -1,8 +1,30 @@
+body{
+  font-family: 'Varela Round', sans-serif;
+}
+
 .graph {
   display: flex;
   align-items: flex-end;
+  margin:16px;
+  height:128px;
 }
 
 .bar {
   width: 100%;
+  cursor: pointer;
+}
+
+.bar:hover{ 
+  filter: grayscale(0.5);
+}
+
+.graph-buttons{
+  margin:16px;
+  width:256px;
+  justify-content: space-around;
+}
+
+.graph-buttons button{
+  width:100%;
+  margin-top:16px;
 }
