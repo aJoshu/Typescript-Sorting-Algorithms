@@ -1,12 +1,14 @@
-import useSound from "use-sound";
-import click from "./sounds/click.mp3";
 import React, { useState, useEffect } from "react";
+import { Button } from "@mui/material";
 import Slider from "@mui/material/Slider";
 import Tooltip from "@mui/material/Tooltip";
-import "./style.css";
-import { Button } from "@mui/material";
+import click from "./sounds/click.mp3";
+import useSound from "use-sound";
+
 import { generateRandomArray } from "../utils/generateRandomArray";
 import { getColorForNumber } from "../utils/getColorForNumber";
+
+import "./style.css";
 
 interface Props {}
 const BubbleSort: React.FC<Props> = () => {
@@ -33,6 +35,7 @@ const BubbleSort: React.FC<Props> = () => {
     return arr;
   };
 
+  //Slider Controls
   const handleSliderChange = (e: Event, newValue: number | number[]) => {
     setArrayLength(newValue as number);
   };
@@ -50,13 +53,11 @@ const BubbleSort: React.FC<Props> = () => {
   }, [numbers]);
 
   const regenerate = () => {
-    const randomArray = generateRandomArray(arrayLength);
-    setNumbers(randomArray);
+    setNumbers(generateRandomArray(arrayLength));
   };
 
   const handleSort = () => {
-    const sortedArray = bubbleSortArray([...numbers]);
-    setNumbers(sortedArray);
+    setNumbers(bubbleSortArray([...numbers]));
   };
 
   return (
